@@ -1,0 +1,6 @@
+@Sathyan_Shop.Web_HostAddress = http://localhost:5047
+
+GET {{Sathyan_Shop.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
