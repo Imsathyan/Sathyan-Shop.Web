@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Sathyan_Shop.Web.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+#region Database Connectivity
+builder.Services.AddDbContext<ApplicationDbContext>
+    (options => options.UseSqlServer(builder.Configuration.GetConnectionString("Defaultconnection")));
 
+#endregion
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
